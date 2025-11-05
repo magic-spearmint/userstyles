@@ -1,0 +1,44 @@
+/* ==UserStyle==
+@name         Module: Maths Variables
+@namespace    magic_spearmint-modules-maths_variables
+@author       Magic Spearmint <chstone.personal+devel@gmail.com>
+@description  Module providing a plethora of useful mathematical variables and constants.
+@version      1.0.0
+@license      CC0-1.0
+@copyright    No Rights Reserved
+@match        none
+@homepageURL  https://github.com/magic-spearmint/userstyles
+@supportURL   https://github.com/magic-spearmint/userstyles/wiki
+@updateURL    https://raw.githubusercontent.com/magic-spearmint/userstyles/main/modules/maths_variables.meta.css
+@downloadURL  https://raw.githubusercontent.com/magic-spearmint/userstyles/main/modules/maths_variables.user.css
+@preprocessor none
+==/UserStyle== */
+
+:root {
+   --e: calc(e);
+   --phi: calc((1 + sqrt(5)) / 2);
+   --pi: calc(pi);
+   --tau: calc(2 * pi);
+
+   --fib-1: calc((pow(var(--phi), 1) - pow((1 - var(--phi)), 1)) / sqrt(5));
+   --fib-2: calc((pow(var(--phi), 2) - pow((1 - var(--phi)), 2)) / sqrt(5));
+   --fib-3: calc((pow(var(--phi), 3) - pow((1 - var(--phi)), 3)) / sqrt(5));
+   --fib-4: calc((pow(var(--phi), 4) - pow((1 - var(--phi)), 4)) / sqrt(5));
+   --fib-5: calc((pow(var(--phi), 5) - pow((1 - var(--phi)), 5)) / sqrt(5));
+   --fib-6: calc((pow(var(--phi), 6) - pow((1 - var(--phi)), 6)) / sqrt(5));
+   --fib-7: calc((pow(var(--phi), 7) - pow((1 - var(--phi)), 7)) / sqrt(5));
+   --fib-8: calc((pow(var(--phi), 8) - pow((1 - var(--phi)), 8)) / sqrt(5));
+   --fib-9: calc((pow(var(--phi), 9) - pow((1 - var(--phi)), 9)) / sqrt(5));
+   --fib-10: calc((pow(var(--phi), 10) - pow((1 - var(--phi)), 10)) / sqrt(5));
+   --fib-11: calc((pow(var(--phi), 11) - pow((1 - var(--phi)), 11)) / sqrt(5));
+   --fib-12: calc((pow(var(--phi), 12) - pow((1 - var(--phi)), 12)) / sqrt(5));
+   --fib-13: calc((pow(var(--phi), 13) - pow((1 - var(--phi)), 13)) / sqrt(5));
+   --fib-14: calc((pow(var(--phi), 14) - pow((1 - var(--phi)), 14)) / sqrt(5));
+   --fib-15: calc((pow(var(--phi), 15) - pow((1 - var(--phi)), 15)) / sqrt(5));
+   --fib-16: calc((pow(var(--phi), 16) - pow((1 - var(--phi)), 16)) / sqrt(5));
+   --fib-17: calc((pow(var(--phi), 17) - pow((1 - var(--phi)), 17)) / sqrt(5));
+   --fib-18: calc((pow(var(--phi), 18) - pow((1 - var(--phi)), 18)) / sqrt(5));
+   --fib-19: calc((pow(var(--phi), 19) - pow((1 - var(--phi)), 19)) / sqrt(5));
+   --fib-20: calc((pow(var(--phi), 20) - pow((1 - var(--phi)), 20)) / sqrt(5));
+   --fib-21: calc((pow(var(--phi), 21) - pow((1 - var(--phi)), 21)) / sqrt(5));
+}
