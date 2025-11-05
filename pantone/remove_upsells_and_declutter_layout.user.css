@@ -1,0 +1,144 @@
+/* ==UserStyle==
+@name         Pantone Colour Finder: Remove Upsells and Declutter Layout
+@namespace    magic_spearmint-pantone-declutter_layout
+@author       Magic Spearmint <chstone.personal+devel@gmail.com>
+@description  Removes objects devoid of relevant information, including those locked behind paywalls.
+@version      1.0.0
+@license      CC0-1.0
+@copyright    No Rights Reserved
+@match        *://www.pantone.com/color-finder/*
+@require      https://raw.githubusercontent.com/magic-spearmint/userstyles/main/modules/maths_variables.user.css
+@homepageURL  https://github.com/magic-spearmint/userstyles
+@supportURL   https://github.com/magic-spearmint/userstyles/wiki
+@updateURL    https://raw.githubusercontent.com/magic-spearmint/userstyles/main/pantone/remove_upsells_and_declutter_layout.meta.css
+@downloadURL  https://raw.githubusercontent.com/magic-spearmint/userstyles/main/pantone/remove_upsells_and_declutter_layout.user.css
+@preprocessor none
+==/UserStyle== */
+
+#root > div.pantone_header + main[class^='pantone_'] {
+   min-height: unset !important;
+}
+
+#connect-chip-container .chip-block img#chip-image {
+   float: none !important;
+   max-width: 100% !important;
+   min-width: 100% !important;
+   width: 100% !important;
+}
+
+div.single-color-result > #details {
+   & > div.gallery {
+      display: grid;
+   	grid-template-columns: 1fr 3fr;
+   	justify-items: start;
+   	align-items: start;
+   	align-content: stretch;
+   }
+   
+   min-height: unset !important;
+}
+
+div.thumbnails {
+   display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+}
+
+div.single-color-result > #details {
+   & > div.gallery {
+      & > div.thumbnails {
+         & > figure {
+            &[active] {
+               border: none !important;
+            }
+         
+            &:nth-child(1) > img {
+               box-shadow: var(--color-middle-grey) 0 0 calc(1px * var(--fib-4)) 0 !important;
+               margin-top: unset !important;
+               scale: unset !important;
+            }
+         
+            border: none !important;
+         }
+         
+      	align-items: flex-start !important;
+      	flex-direction: column !important;
+      	flex-wrap: nowrap !important;
+      	justify-content: flex-start !important;
+      	row-gap: 0.5rem !important;
+         display: flex !important;
+      }
+      
+      & > div.hero {
+         & > figure {
+            &:hover {
+               z-index: 999;
+            }
+            
+            & > img {
+               box-shadow: var(--color-middle-grey) 0 0 calc(1px * var(--fib-4)) 0 !important;
+            }
+
+            padding: 0 !important;
+            position: sticky !important;
+         }
+      }
+   
+      & img {
+         border-radius: calc(1px * var(--fib-4)) !important;
+      }
+   
+      display: grid !important;
+   	grid-template-columns: 25% 75% !important;
+   }
+
+   & > div.right-side {
+      display: block !important;
+	   padding-left: 24px !important;
+   }
+   
+	max-height: 544px !important;
+}
+
+
+article.color-value,
+.col-12.col-sm-6.chip-block,
+.color-value {
+   margin: 0 !important;
+   padding: 0 !important;
+}
+
+#connect-chip-container > .row.flex-sm-row-reverse {
+   align-items: stretch !important;
+   flex-wrap: nowrap !important;
+   justify-content: flex-end !important;
+   margin: 0 !important;
+}
+
+#harmonies > h2 + p,
+button.connect-link ,
+div.in-result.color-finder-items,
+div.single-color-result div.connect-upsell,
+div.single-color-result > #details > div.right-side > div.specs.show > div.aws > ul > li:has(a#scrollToHarmonies) {
+   display: none !important;
+   visibility: hidden !important;
+}
+
+div.single-color-result div.connect-upsell div[class*="data"]>p:nth-child(2),
+div.single-color-result div#harmonies div.harmonies div.results[data-harmony] div.colors {
+   filter: none !important;
+}
+
+div.single-color-result div#disclaimer p.disclaimer {
+   margin-top: 0 !important;
+}
+
+#harmonies > h2 + p + div.harmonies {
+   min-height: 200px !important;
+}
+
+#root > main[class^="pantone_"] {
+   margin-bottom: 1rem !important;
+}
