@@ -1,0 +1,140 @@
+/* ==UserStyle==
+@name         Kemono: Increased File View Density
+@namespace    magic_spearmint-kemono-increased_file_view_density
+@author       Magic Spearmint <chstone.personal+devel@gmail.com>
+@description  Adjusts the Kemono website by making file view pages more responsive and tweaking several other parts of the layout.
+@version      1.0.0
+@license      CC0-1.0
+@copyright    No Rights Reserved
+@match        *://*.kemono.cr/*
+@match        *://kemono.cr/*
+@require      https://raw.githubusercontent.com/magic-spearmint/userstyles/main/modules/maths_variables.user.css
+@homepageURL  https://github.com/magic-spearmint/userstyles
+@supportURL   https://github.com/magic-spearmint/userstyles/wiki
+@updateURL    https://raw.githubusercontent.com/magic-spearmint/userstyles/main/kemono/increased_file_view_density.meta.css
+@downloadURL  https://raw.githubusercontent.com/magic-spearmint/userstyles/main/kemono/increased_file_view_density.user.css
+@preprocessor none
+==/UserStyle== */
+
+:root {
+   /* Colours */
+   --colour0-primary-transparent: color-mix(in hsl, var(--colour0-primary) 10%, transparent);
+   --colour0-secondary-transparent: color-mix(in hsl, var(--colour0-secondary) 0%, transparent);
+
+   --news-colour1-primary: hsl(49.96, 97.61%, 50.78%);
+   --news-colour1-secondary: var(--colour1-primary);
+
+   /* Measurements for border-radius */
+   --border-radii-xxxs: calc(1rem / (var(--phi) * 16));
+   --border-radii-xxs: calc(1rem / (var(--phi) * 8));
+   --border-radii-xs: calc(1rem / (var(--phi) * 4));
+   --border-radii-s: calc(1rem / (var(--phi) * 2));
+   --border-radii-m: calc(1rem / (var(--phi) * 1));
+   --border-radii-l: calc(1rem / (var(--phi) * 0.5));
+   --border-radii-xl: calc(1rem / (var(--phi) * 0.25));
+   --border-radii-xxl: calc(1rem / (var(--phi) * 0.125));
+   --border-radii-xxxl: calc(1rem / (var(--phi) * 0.0625));
+
+   --border-radii: var(--border-radii-m);
+}
+
+/* Hacky usage of CSS layers to create a toggle option that can easily be changed by end users. */
+@layer /*[[hideNewsBanner]]*/;
+@layer hide-news-banner__false {
+   #announcement-banner,
+   a[style='color: #000000; padding: 0;'] {
+      display: none;
+      visibility: hidden;
+   }
+}
+@layer hide-news-banner__true {
+   #announcement-banner,
+   a[style='color: #000000; padding: 0;'] {
+      display: block;
+      visibility: visible;
+   }
+}
+
+#ad-banner,
+.global-sidebar-entry:has(> a[style="color: rgb(226, 108, 94);"]) {
+   display: none;
+   visibility: hidden;
+}
+
+/* On November 3rd, 2024, Magic Spearmint bit into the crazy hamburger. */
+#burgor {
+   height: 100%;
+   min-width: calc(48px - 5px) !important;
+   padding: 0 !important;
+
+   &::after {
+      align-items: center;
+      color: var(--colour0-secondary);
+      content: '\002261';
+      display: flex;
+      font-family: auto;
+      font-kerning: auto;
+      font-optical-sizing: none;
+      font-size: 28px;
+      font-style: normal;
+      font-weight: bold;
+      height: 100%;
+      justify-content: center;
+      line-height: 24px;
+      min-width: 24px;
+      padding: 0 5px 5px 5px;
+      transform: scale(1.125, 1);
+      transition-duration: var(--duration-global);
+      transition-property: background-color, color;
+      width: 100%;
+   }
+
+   &:hover::after {
+      background-color: var(--colour0-primary-transparent);
+      color: var(--colour0-primary);
+   }
+
+   & > img {
+      display: none !important;
+      height: 0 !important;
+      visibility: hidden !important;
+      width: 0 !important;
+   }
+}
+
+/* Responsive goodness affecting the file view pages for posts. */
+.post__files {
+   align-content: stretch;
+   align-items: stretch;
+   flex-flow: unset;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+
+   & > .post__thumbnail {
+      margin: 0.5rem 0 calc(1vh / 0.3);
+      padding: 0 calc(1vw / 1.5) calc(1vh / 3);
+
+      & > figure {
+         line-height: 0;
+
+         & img {
+            box-shadow: 0 0 0 2px var(--anchour-internal-colour2-primary), 0 0 0 4px var(--colour1-primary);
+            transition-duration: var(--duration-global);
+            transition-property: box-shadow;
+         }
+
+         & > a.fileThumb.image-link > img {
+            aspect-ratio: auto;
+            height: auto;
+            margin: 0;
+            max-height: 100%;
+            max-width: 100%;
+            width: calc(100vh / 3);
+         }
+      }
+
+      &:hover > figure img {
+         box-shadow: 0 0 0 2px var(--anchour-internal-colour2-primary), 0 0 0 4px var(--anchour-internal-colour1-secondary);
+      }
+   }
+}
