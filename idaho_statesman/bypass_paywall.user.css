@@ -1,0 +1,29 @@
+/* ==UserStyle==
+@name         Idaho Statesman: Bypass Paywall
+@namespace    magic_spearmint-idaho_statesman-bypass_paywall
+@author       Magic Spearmint <chstone.personal+devel@gmail.com>
+@description  Restores article content and removes paywall nags.
+@version      1.0.0
+@license      CC0-1.0
+@copyright    No Rights Reserved
+@match        *://www.idahostatesman.com/*
+@homepageURL  https://github.com/magic-spearmint/userstyles
+@supportURL   https://github.com/magic-spearmint/userstyles/wiki
+@updateURL    https://raw.githubusercontent.com/magic-spearmint/userstyles/main/idaho_statesman/bypass_paywall.meta.css
+@downloadURL  https://raw.githubusercontent.com/magic-spearmint/userstyles/main/idaho_statesman/bypass_paywall.user.css
+@preprocessor none
+==/UserStyle== */
+
+.yzfade {
+   mask-image: none !important;
+}
+
+#promo-banner,
+#yzwall {
+   display: none !important;
+   visibility: hidden !important;
+}
+
+.yzarret {
+   display: block !important;
+}
