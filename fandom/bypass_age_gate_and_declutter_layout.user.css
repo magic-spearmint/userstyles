@@ -1,0 +1,61 @@
+/* ==UserStyle==
+@name         Fandom: Bypass Age Gate and Declutter Layout
+@namespace    magic_spearmint-fandom-bypass_age_gate_and_declutter_layout
+@author       Magic Spearmint <chstone.personal+devel@gmail.com>
+@description  Eliminates invasive age gate and removes space-wasting clutter.
+@version      1.0.0
+@license      CC0-1.0
+@copyright    No Rights Reserved
+@match        *://*.fandom.com/*
+@require      https://raw.githubusercontent.com/magic-spearmint/userstyles/main/modules/maths_variables.user.css
+@homepageURL  https://github.com/magic-spearmint/userstyles
+@supportURL   https://github.com/magic-spearmint/userstyles/wiki
+@updateURL    https://raw.githubusercontent.com/magic-spearmint/userstyles/main/fandom/bypass_age_gate_and_declutter_layout.meta.css
+@downloadURL  https://raw.githubusercontent.com/magic-spearmint/userstyles/main/fandom/bypass_age_gate_and_declutter_layout.user.css
+@preprocessor none
+==/UserStyle== */
+
+.global-explore-navigation,
+.global-top-navigation__action-wrapper,
+.page-counter > div,
+.side-bt-container.left,
+.side-bt-container.right,
+.sitenotice-wrapper,
+[data-tracking-label="fandom-logo"],
+#age-gate,
+#current-wiki__content > div.navigation-tab.navigation-tab--left,
+html:not(.ve-active) .page.has-right-rail .page__right-rail {
+   display: none !important;
+   visibility: hidden !important;
+}
+
+.global-top-navigation {
+   background: transparent !important;
+   border: 0 none transparent !important;
+   height: 0 !important;
+   padding: 0 !important;
+}
+
+.search-container {
+   display: unset !important;
+   right: 18px !important;
+   position: relative !important;
+}
+
+.fandom-community-header__background {
+   transform: none !important;
+
+   &.fullScreen {
+      width: 100% !important;
+   }
+}
+
+.community-header-wrapper {
+   height: 100px !important;
+}
+
+.main-container {
+   margin-left: 0 !important;
+   min-width: unset !important;
+   width: unset !important;
+}
